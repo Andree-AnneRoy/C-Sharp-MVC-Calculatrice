@@ -1,0 +1,23 @@
+﻿@model Calculatrice.Models.CalculatriceViewModel
+
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm())
+{
+    <fieldset style="border-style:dotted; border-color:blueviolet">
+        <legend style="color:coral; font-size:large; font-style:normal; border-style:dotted; border-color:blueviolet"> Calculs à 2 chiffres </legend>
+        @Html.EditorFor(x => x.premierChiffre) <br /> <br />
+        @Html.EditorFor(x => x.deuxiemeChiffre) <br /> <br />
+        <input type="submit" value="addition" name="command" />
+        <input type="submit" value="soustraction" name="command" />
+        <input type="submit" value="multiplication" name="command" />
+        <input type="submit" value="division" name="command" />
+        <input type="submit" value="exposant" name="command" />
+        <input type="submit" value="moyenne" name="command" />
+        <input type="submit" value="modulo" name="command" />
+
+        <h2 style="color:red"> @Html.Label("Le résultat est : ") @Html.DisplayFor(x => x.Resultat) </h2>
+    </fieldset>
+}
